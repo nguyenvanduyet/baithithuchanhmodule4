@@ -59,7 +59,7 @@ public class CityController {
     @PostMapping("edit/{id}")
     public ModelAndView edit(@ModelAttribute City city, @PathVariable Long id) {
         ModelAndView modelAndView = new ModelAndView("redirect:/city");
-        city.setId(id);
+//        city.setId(id);
         cityService.edit(city);
         return modelAndView;
     }
@@ -67,6 +67,7 @@ public class CityController {
     @GetMapping("view/{id}")
     public ModelAndView findNameCity(@PathVariable Long id) {
         ModelAndView modelAndView = new ModelAndView("view");
+        modelAndView.addObject("city",cityService.findAll());
         return modelAndView;
     }
 

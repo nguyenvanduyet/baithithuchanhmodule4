@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Edit City</h2>
+<form method="post" th:object="${c}">
+    <input th:field="*{name}">
+    <input th:field="*{acreage}">
+    <input th:field="*{des}">
+    <input th:field="*{population}">
+    <input th:field="*{nation}">
+    <button type="submit">Edit</button>
+</form>
+
+
+</body>
+</html>

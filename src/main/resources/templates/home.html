@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<h2> Danh Sách thành phố</h2>
+
+<table id="city" border="1">
+  <tr>
+    <td>Name</td>
+    <td>national</td>
+
+  </tr>
+  <th:block th:each="c:${list}">
+    <tr>
+      <td><a th:href="@{'/city/view/'+${c.id}}" th:text="${c.name}"></a></td>
+      <td th:text="${c.nation.name}"></td>
+
+
+      <td>
+        <a th:href="@{'/city/edit/'+${c.id}}">edit</a>
+        <a onclick="return confirm('are you sure?')" th:href="@{'/city/delete/'+${c.id}}">delete</a>
+      </td>
+    </tr>
+  </th:block>
+</table>
+</body>
+</html>

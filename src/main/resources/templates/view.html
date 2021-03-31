@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2><a href="/city/create">Create</a></h2>
+<h2> Mô tả thành phố</h2>
+
+<table id="city" border="1">
+    <tr>
+        <td>Name</td>
+        <td>National</td>
+        <td>Acreage</td>
+        <td>Des</td>
+        <td>Population</td>
+
+    </tr>
+    <th:block th:each="c:${city}">
+        <tr>
+            <td th:text="${c.name}"></td>
+            <td th:text="${c.nation.name}"></td>
+            <td th:text="${c.des}"></td>
+            <td th:text="${c.population}"></td>
+            <td th:text="${c.acreage}"></td>
+        </tr>
+    </th:block>
+</table>
+</body>
+</html>
